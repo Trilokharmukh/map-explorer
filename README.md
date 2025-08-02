@@ -1,4 +1,4 @@
-# sVue.js Spatial Data Mapping Application
+# Map Exploree
 
 A modern Vue.js application that displays spatial data on an interactive map using Leaflet. This application demonstrates how to work with different types of spatial data including Points, Polygons, and MultiPolygons.
 
