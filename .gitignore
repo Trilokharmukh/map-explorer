@@ -1,0 +1,79 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+
+# Production build
+dist/
+build/
+
+# Vite cache
+.vite/
+
+# Local env files
+.env.local
+.env.*.local
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# macOS
+.DS_Store
+
+# Optional npm cache directory
+.npm/
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# vuepress build output
+.vuepress/dist/
+
+# Storybook build output
+storybook-static/
+
+# VS Code settings
+.vscode/
+
+# Local Netlify folder
+.netlify/
+
+# Temporary files
+tmp/
+temp/
+
+# SASS / SCSS cache
+.sass-cache/
+
+# Firebase deployment
+.firebaserc
+
+# Lock files (optional: choose one if you're standardizing)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml

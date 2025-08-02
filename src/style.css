@@ -1,0 +1,287 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.header h1 {
+  color: #333;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.header p {
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.map-container {
+  flex: 2;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+#map {
+  width: 100%;
+  height: 600px;
+  border-radius: 12px;
+}
+
+.sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+}
+
+.controls {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.controls h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.layer-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.layer-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.layer-toggle:hover {
+  background-color: #f5f5f5;
+}
+
+.layer-toggle input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #667eea;
+}
+
+.layer-toggle label {
+  cursor: pointer;
+  font-weight: 500;
+  color: #333;
+}
+
+.feature-info {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  overflow-y: auto;
+}
+
+.feature-info h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.feature-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #667eea;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h4 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.feature-card p {
+  color: #666;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.properties-section {
+  margin-top: 1rem;
+}
+
+.property-list {
+  margin-top: 0.5rem;
+}
+
+.property-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.property-item:last-child {
+  border-bottom: none;
+}
+
+.property-key {
+  font-weight: 600;
+  color: #333;
+  min-width: 120px;
+  margin-right: 0.5rem;
+}
+
+.property-value {
+  color: #666;
+  text-align: right;
+  flex: 1;
+}
+
+.coordinates-section {
+  margin-top: 1rem;
+}
+
+.coordinates-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e9ecef;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+.coordinates-text {
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #495057;
+  flex: 1;
+}
+
+.copy-btn {
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background-color 0.2s;
+  margin-left: 0.5rem;
+}
+
+.copy-btn:hover {
+  background: #5a6fd8;
+}
+
+.copy-btn:active {
+  transform: scale(0.95);
+}
+
+.no-feature {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 2rem;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: #666;
+}
+
+.loading::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ddd;
+  border-top: 2px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-left: 0.5rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  .sidebar {
+    max-width: none;
+  }
+
+  #map {
+    height: 400px;
+  }
+
+  .header {
+    padding: 1rem;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+}
